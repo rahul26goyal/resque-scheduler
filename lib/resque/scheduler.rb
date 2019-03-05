@@ -98,7 +98,7 @@ module Resque
         Resque.schedule.each do |name, config|
           load_schedule_job(name, config)
         end
-        Resque.redis.del(:schedules_changed)
+        Resque.redis.del(:schedules_changed) #This needs to be handled..
         procline 'Schedules Loaded'
       end
 
